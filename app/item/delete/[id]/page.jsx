@@ -9,7 +9,7 @@ export default async function DeleteItemForm({ params }) {
   return (
     <div>
       <h1>アイテム削除</h1>
-      <form action={itemDeleteWithId} method="POST">
+      <form action={itemDeleteWithId}>
         <h2>{singleItem.title}</h2>
         <Image
           src={singleItem.image}

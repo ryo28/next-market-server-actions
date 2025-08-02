@@ -1,6 +1,6 @@
 export function EditItemForm({ itemUpdateWithId, singleItem }) {
   return (
-    <form action={itemUpdateWithId} method="POST">
+    <form action={itemUpdateWithId}>
       <input
         defaultValue={singleItem.title}
         type="text"

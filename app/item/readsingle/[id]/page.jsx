@@ -1,6 +1,7 @@
 import connectDB from "@/app/utils/database";
 import { itemModel } from "@/app/utils/schemaModels";
 import Image from "next/image";
+import Link from "next/link";
 
 // データベースからIDに基づいてアイテムを1つ取得する関数
 async function itemReadSingle(id) {
@@ -29,6 +30,10 @@ export default async function ReadSingleItem({ params }) {
         <h2>¥{singleItem.price}</h2>
         <hr />
         <p>{singleItem.description}</p>
+        <div>
+          <Link href={`/item/update/${singleItem._id}`}>アイテム編集</Link>
+          <Link href={`/item/delete/${singleItem._id}`}>アイテム削除</Link>
+        </div>
       </div>
     </div>
   );

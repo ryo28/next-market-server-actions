@@ -16,7 +16,7 @@ export default async function ReadAllItems() {
     <div>
       <h1>こんにちは</h1>
       {allItems.map((item) => (
-        <Link href="" key={item._id}>
+        <Link href={`/item/readsingle/${item._id}`} key={item._id}>
           <Image
             src={item.image}
             width={750}
