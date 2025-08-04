@@ -10,8 +10,9 @@ export default async function UpdateItem({ params }) {
     <div>
       <h1>アイテム編集</h1>
       <EditItemForm
-        itemUpdateWithId={itemUpdateWithId}
+        itemFormActions={itemUpdateWithId}
         singleItem={singleItem}
+        buttonText="編集"
       />
     </div>
   );

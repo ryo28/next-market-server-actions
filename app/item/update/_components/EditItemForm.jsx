@@ -1,6 +1,6 @@
-export function EditItemForm({ itemUpdateWithId, singleItem }) {
+export function EditItemForm({ itemFormActions, singleItem, buttonText }) {
   return (
-    <form action={itemUpdateWithId}>
+    <form action={itemFormActions}>
       <input
         defaultValue={singleItem.title}
         type="text"
@@ -29,7 +29,7 @@ export function EditItemForm({ itemUpdateWithId, singleItem }) {
         placeholder="商品説明"
         required
       />
-      <button>編集</button>
+      <button>{buttonText}</button>
     </form>
   );
 }
