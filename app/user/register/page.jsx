@@ -1,6 +1,6 @@
 import { userRegister } from "@/app/actions/userRegister";
 
-export default function Register(params) {
+export default function Register() {
   return (
     <div>
       <h1>ユーザー登録</h1>
