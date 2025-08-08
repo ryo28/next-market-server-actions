@@ -13,7 +13,7 @@ export default async function ReadAllItems() {
   const allItems = await itemReadAll();
 
   return (
-    <div>
+    <div className="grid-container-in">
       <h1>こんにちは</h1>
       {allItems.map((item) => (
         <Link href={`/item/readsingle/${item._id}`} key={item._id}>

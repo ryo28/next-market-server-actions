@@ -10,7 +10,7 @@ export default function Login() {
   const [state, formAction] = useActionState(userLogin, initialState);
   return (
     <div>
-      <h1>ユーザーログイン</h1>
+      <h1 className="page-title">ユーザーログイン</h1>
       <form action={formAction}>
         <label>
           <input

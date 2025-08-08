@@ -15,7 +15,7 @@ export default async function ReadSingleItem({ params }) {
   const singleItem = await itemReadSingle(id); // データベースからアイテムを取得
 
   return (
-    <div>
+    <div className="grid-container-si">
       <div>
         <Image
           src={singleItem.image}
