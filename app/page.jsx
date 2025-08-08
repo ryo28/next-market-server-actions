@@ -3,6 +3,8 @@ import connectDB from "./utils/database";
 import { itemModel } from "./utils/schemaModels";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic"; //このページは常に最新のデータを表示するため、動的に生成される
+
 const itemReadAll = async () => {
   await connectDB(); //データベースに接続
   const allItems = await itemModel.find(); //全てのアイテムを取得
