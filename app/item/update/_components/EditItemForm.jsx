@@ -1,4 +1,9 @@
-export function EditItemForm({ itemFormActions, singleItem, buttonText }) {
+export function EditItemForm({
+  itemFormActions,
+  singleItem,
+  buttonText,
+  payload,
+}) {
   return (
     <form action={itemFormActions}>
       <input
@@ -22,6 +27,7 @@ export function EditItemForm({ itemFormActions, singleItem, buttonText }) {
         placeholder="画像"
         required
       />
+      {payload && <input type="hidden" name="email" value={payload.email} />}
       <textarea
         name="description"
         rows={15}
