@@ -1,7 +1,9 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import connectDB from "../utils/database";
 import { itemModel } from "../utils/schemaModels";
+import { redirect } from "next/dist/server/api-utils";
 
 export async function itemUpdate(id, formData) {
   const itemData = {
@@ -19,4 +21,6 @@ export async function itemUpdate(id, formData) {
   } catch {
     throw new Error("エラー：アイテム編集失敗");
   }
+  revalidatePath("/"); // アイテム更新後にトップページを再検証
+  redirect("/"); // アイテム更新後にトップページへリダイレ
 }
