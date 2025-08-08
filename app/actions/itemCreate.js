@@ -8,6 +8,7 @@ export async function itemCreate(formData) {
     title: formData.get("title"),
     price: formData.get("price"),
     image: formData.get("image"),
+    email: formData.get("email"),
     description: formData.get("description"),
   };
   try {
