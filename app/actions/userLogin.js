@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { SignJWT } from "jose";
 import connectDB from "../utils/database";
 import { UserModel } from "../utils/schemaModels";
+import { redirect } from "next/navigation";
 
 const config = {
   mazAge: 60 * 60 * 24, // 1 day
@@ -55,4 +56,5 @@ export async function userLogin(prevState, formData) {
   } catch {
     return { message: "エラー：ログイン失敗" };
   }
+  redirect("/"); // ログイン成功後にトップページへリダイレクト
 }
