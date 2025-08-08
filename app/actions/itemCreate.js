@@ -2,7 +2,7 @@
 import connectDB from "@/app/utils/database";
 import { itemModel } from "@/app/utils/schemaModels";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 export async function itemCreate(formData) {
   const itemData = {
     title: formData.get("title"),

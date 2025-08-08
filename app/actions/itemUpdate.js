@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import connectDB from "../utils/database";
 import { itemModel } from "../utils/schemaModels";
-import { redirect } from "next/dist/server/api-utils";
+import { redirect } from "next/navigation";
 
 export async function itemUpdate(id, formData) {
   const itemData = {
