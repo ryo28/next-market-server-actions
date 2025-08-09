@@ -7,7 +7,10 @@ const initialState = {
 };
 
 export default function Login() {
-  const [state, formAction] = useActionState(userLogin, initialState);
+  const [state, formAction, isPending] = useActionState(
+    userLogin,
+    initialState
+  );
   return (
     <div>
       <h1 className="page-title">ユーザーログイン</h1>
@@ -29,7 +32,7 @@ export default function Login() {
           />
         </label>
         {state && <h3>{state.message}</h3>}
-        <button type="submit">ログイン</button>
+        <button type="submit">{isPending ? "処理中..." : "ログイン"}</button>
       </form>
     </div>
   );

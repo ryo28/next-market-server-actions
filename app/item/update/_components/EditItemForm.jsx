@@ -1,3 +1,5 @@
+import ImgInput from "@/app/_components/imgInput";
+
 export function EditItemForm({
   itemFormActions,
   singleItem,
@@ -20,13 +22,7 @@ export function EditItemForm({
         placeholder="価格"
         required
       />
-      <input
-        defaultValue={singleItem ? singleItem.image : ""}
-        type="text"
-        name="image"
-        placeholder="画像"
-        required
-      />
+      <ImgInput />
       {payload && <input type="hidden" name="email" value={payload.email} />}
       <textarea
         name="description"

@@ -16,6 +16,8 @@ export default async function ReadSingleItem({ params }) {
 
   return (
     <div className="grid-container-si">
+      <title>{singleItem.title}</title>
+      <meta name="description" content={singleItem.description} />
       <div>
         <Image
           src={singleItem.image}

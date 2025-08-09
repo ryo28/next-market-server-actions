@@ -1,5 +1,10 @@
 import { userRegister } from "@/app/actions/userRegister";
 
+export const metadata = {
+  title: "登録ページ",
+  description: "ユーザー登録ページです。新しいアカウントを作成できます。",
+};
+
 export default function Register() {
   return (
     <div>

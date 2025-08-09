@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { jwtVerify } from "jose";
+import { updateToken } from "./app/utils/auth";
 
 export async function middleware(request) {
   const token = request.cookies.get("token")?.value;
@@ -8,9 +8,7 @@ export async function middleware(request) {
     return NextResponse.redirect(new URL("/user/login", request.url));
   }
   try {
-    const secretKey = new TextEncoder().encode("next-market-server");
-    await jwtVerify(token, secretKey);
-    return NextResponse.next();
+    return updateToken(token);
   } catch {
     if (!token) {
       // トークンが無効な場合、ログインページにリダイレクト
